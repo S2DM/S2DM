@@ -1,4 +1,4 @@
-# Nerfies
+# S2DM
 
 This is the repository that contains source code for the [S2DM website](https://s2dm.github.io/S2DM/).
 
