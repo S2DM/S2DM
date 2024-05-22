@@ -114,6 +114,10 @@ body {
   overflow: hidden;
 }
 
+.pose-carousel {
+  overflow: hidden;
+}
+
 .slider-navigation-next {
   background-color: lightblue;
 }

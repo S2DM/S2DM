@@ -110,9 +110,12 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>Diffusion models have achieved great success in image generation. However, when leveraging this idea for video generation, we face significant challenges in maintaining the consistency and continuity across video frames. This is mainly caused by the lack of an effective framework to align frames of videos with desired temporal features while preserving consistent semantic and stochastic features.</p>
-          <p>In this work, we propose a novel Sector-Shaped Diffusion Model (S2DM) whose sector-shaped diffusion region is formed by a set of ray-shaped reverse diffusion processes starting at the same noise point. S2DM can generate a group of intrinsically related data sharing the same semantic and stochastic features while varying on temporal features with appropriate guided conditions. We apply S2DM to video generation tasks, and explore the use of optical flow as temporal conditions. Our experimental results show that S2DM outperforms many existing methods in the task of video generation without any temporal-feature modelling modules. For text-to-video generation tasks where temporal conditions are not explicitly given, we propose a two-stage generation strategy which can decouple the generation of temporal features from semantic-content features.</p>
-          <p>We show that, without additional training, our model integrated with another temporal conditions generative model can still achieve comparable performance with existing works.</p>
+          <p>
+            Diffusion models have achieved great success in image generation. However, when leveraging this idea for video generation, we face significant challenges in maintaining the consistency and continuity across video frames. This is mainly caused by the lack of an effective framework to align frames of videos with desired temporal features while preserving consistent semantic and stochastic features. In this work, we propose a novel Sector-Shaped Diffusion Model (S2DM) whose sector-shaped diffusion region is formed by a set of ray-shaped reverse diffusion processes starting at the same noise point. S2DM can generate a group of intrinsically related data sharing the same semantic and stochastic features while varying on temporal features with appropriate guided conditions. We apply S2DM to video generation tasks, and explore the use of optical flow and posture information as temporal conditions. Experimental results show that S2DM outperforms many existing methods for video generation.
+          </p>
+          <p>
+            For text-to-video generation tasks where temporal conditions are not explicitly given, we propose a two-stage generation strategy which can decouple the generation of temporal features from semantic-content features. We show that, without additional training, our model integrated with another temporal conditions generative model can still achieve comparable performance with existing works.
+          </p>
         </div>
       </div>
     </div>
@@ -124,11 +127,203 @@
   <div class="container" style="display: block; text-align: center;">
     <h2 class="title is-3">Pipeline</h2>
     <div style="display: flex;">
-      <img src="static/images/training1.png" style="width: 50%;" />
-      <img src="static/images/inference1.png"  style="width: 50%;"/>
+      <img src="static/images/structure.jpg" />
     </div>
   </div>
 </section>
+
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title" style="text-align: center">Performance Comparison (TikTok)</h2>
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <div class="tile is-child" style="display: block; text-align: center;">
+              <p> Reference </p>
+          </div>
+          <div class="tile is-child" style="display: block; text-align: center;">
+              <p> Ours </p>
+          </div>
+          <div class="tile is-child" style="display: block; text-align: center;">
+              <p> Disco </p>
+          </div>
+          <div class="tile is-child" style="display: block; text-align: center;">
+              <p> Magic Animate </p>
+          </div>
+        </div>
+      </div>
+      <div id="result-carousel" class="carousel results-carousel" data-slides-to-show="1" pagination="false">
+        <div class="item">
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/00337_17/ref.png" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box ours" style="display: block; text-align: center;">
+                  <img src="static/poses/00337_17/S2DM.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/00337_17/disco.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/00337_17/magic_animate.gif" width="250"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/201_002_50/ref.png" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box ours" style="display: block; text-align: center;">
+                  <img src="static/poses/201_002_50/S2DM.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/201_002_50/disco.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/201_002_50/magic_animate.gif" width="250"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="item">
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/201_021_129/ref.png" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box ours" style="display: block; text-align: center;">
+                  <img src="static/poses/201_021_129/S2DM.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/201_021_129/disco.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/201_021_129/magic_animate.gif" width="250"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/201_024_150/ref.png" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box ours" style="display: block; text-align: center;">
+                  <img src="static/poses/201_024_150/S2DM.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/201_024_150/disco.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/201_024_150/magic_animate.gif" width="250"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/202_007_193/ref.png" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box ours" style="display: block; text-align: center;">
+                  <img src="static/poses/202_007_193/S2DM.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/202_007_193/disco.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/202_007_193/magic_animate.gif" width="250"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div
+
+        <div class="item">
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/202_025_214/ref.png" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box ours" style="display: block; text-align: center;">
+                  <img src="static/poses/202_025_214/S2DM.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/202_025_214/disco.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/poses/202_025_214/magic_animate.gif" width="250"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 
 <section class="hero is-light">
