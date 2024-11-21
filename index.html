@@ -111,10 +111,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Diffusion models have achieved great success in image generation. However, when leveraging this idea for video generation, we face significant challenges in maintaining the consistency and continuity across video frames. This is mainly caused by the lack of an effective framework to align frames of videos with desired temporal features while preserving consistent semantic and stochastic features. In this work, we propose a novel Sector-Shaped Diffusion Model (S2DM) whose sector-shaped diffusion region is formed by a set of ray-shaped reverse diffusion processes starting at the same noise point. S2DM can generate a group of intrinsically related data sharing the same semantic and stochastic features while varying on temporal features with appropriate guided conditions. We apply S2DM to video generation tasks, and explore the use of optical flow and posture information as temporal conditions. Experimental results show that S2DM outperforms many existing methods for video generation.
-          </p>
-          <p>
-            For text-to-video generation tasks where temporal conditions are not explicitly given, we propose a two-stage generation strategy which can decouple the generation of temporal features from semantic-content features. We show that, without additional training, our model integrated with another temporal conditions generative model can still achieve comparable performance with existing works.
+            Diffusion models have achieved remarkable success in image generation. However, applying this concept to video generation introduces significant challenges, particularly in maintaining consistency and continuity throughout video frames. Existing approaches primarily address these challenges by incorporating spatiotemporal attention modules or additional temporal conditions. However, they often overlook the impact of non-shared noise between frames in the diffusion process, which can disrupt both semantic coherence and consistent stochastic details in the video. To tackle this problem, we introduce the Sector-Shaped Diffusion Model (S2DM), which employs a sector-shaped diffusion process with shared noise across frames under specific conditions. S2DM ensures that video frames maintain consistent semantic features and stochastic details, while preserving continuous temporal characteristics through guided conditions. We evaluate S2DM on various conditional video generation tasks, using optical flow or posture information as temporal conditions, and descriptive text or reference images as semantic conditions. Experimental results demonstrate that S2DM outperforms existing methods in generating videos with thematic coherence and smooth narrative progression. For text-to-video generation, where temporal conditions are not explicitly provided, we propose a three-step generation strategy that decouples the generation of temporal characteristics from semantic features. Our results can be viewd at <a style="color: blue" href=https://s2dm.github.io/S2DM>https://s2dm.github.io/S2DM/</a>.
           </p>
         </div>
       </div>
@@ -145,10 +142,10 @@
               <p> Ours </p>
           </div>
           <div class="tile is-child" style="display: block; text-align: center;">
-              <p> Disco(CVPR'2024) </p>
+              <p> Disco [Wang et al.] </p>
           </div>
           <div class="tile is-child" style="display: block; text-align: center;">
-              <p> Magic Animate(CVPR'2024) </p>
+              <p> Magic Animate [Xu et al.] </p>
           </div>
         </div>
       </div>
@@ -341,7 +338,7 @@
               <p>(Text Conditioned) </p>
           </div>
           <div class="tile is-child" style="display: block; text-align: center;">
-              <p> LFDM(CVPR'2023) </p>
+              <p> LFDM [Ni et al.] </p>
           </div>
         </div>
       </div>
@@ -599,7 +596,7 @@
               <p>(Text Conditioned) </p>
           </div>
           <div class="tile is-child" style="display: block; text-align: center;">
-              <p> LFDM(CVPR'2023) </p>
+              <p> LFDM [Ni et al.] </p>
           </div>
         </div>
       </div>
@@ -763,23 +760,200 @@
     </div>
   </div>
 </section>
+
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title" style="text-align: center">Performance Comparison (OpenVid)</h2>
+      <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <div class="tile is-child" style="display: block; text-align: center;">
+              <p> Reference Image </p>
+          </div>
+          <div class="tile is-child" style="display: block; text-align: center;">
+              <p> Ours </p>
+              <p>(Flow Conditioned) </p>
+          </div>
+          <div class="tile is-child" style="display: block; text-align: center;">
+              <p> SVD [Andreas et al.] </p>
+          </div>
+        </div>
+      </div>
+      <div id="result-carousel" class="carousel results-carousel" data-slides-to-show="1">
+        <div class="item">
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child">
+                <div class="box " style="display: block; text-align: center;">
+                  <img src="static/videos/ref_3.png" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box ours" style="display: block; text-align: center;">
+                  <img src="static/videos/our_3.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/videos/svd_3.gif" width="250"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child">
+                <div class="box " style="display: block; text-align: center;">
+                  <img src="static/videos/ref_4.png" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box ours" style="display: block; text-align: center;">
+                  <img src="static/videos/our_4.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/videos/svd_4.gif" width="250"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child">
+                <div class="box " style="display: block; text-align: center;">
+                  <img src="static/videos/ref_5.png" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box ours" style="display: block; text-align: center;">
+                  <img src="static/videos/our_5.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/videos/svd_5.gif" width="250"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child">
+                <div class="box " style="display: block; text-align: center;">
+                  <img src="static/videos/ref_6.png" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box ours" style="display: block; text-align: center;">
+                  <img src="static/videos/our_6.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/videos/svd_6.gif" width="250"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child">
+                <div class="box " style="display: block; text-align: center;">
+                  <img src="static/videos/ref_7.png" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box ours" style="display: block; text-align: center;">
+                  <img src="static/videos/our_7.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/videos/svd_7.gif" width="250"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child">
+                <div class="box " style="display: block; text-align: center;">
+                  <img src="static/videos/ref_10.png" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box ours" style="display: block; text-align: center;">
+                  <img src="static/videos/our_10.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/videos/svd_10.gif" width="250"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child">
+                <div class="box " style="display: block; text-align: center;">
+                  <img src="static/videos/ref_1.png" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box ours" style="display: block; text-align: center;">
+                  <img src="static/videos/our_1.gif" width="250"/>
+                </div>
+              </div>
+              <div class="tile is-child">
+                <div class="box" style="display: block; text-align: center;">
+                  <img src="static/videos/svd_1.gif" width="250"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section class="section is-light">
   <div class="container">
     <h2 class="title" style="text-align: center">Ablation</h2>
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <div class="tile is-child" style="display: block; text-align: center;">
-            <p> Ours </p>
+            <p>Training Shared Noise</p>
+            <p>Sampling Shared Noise</p>
+            <p> (Ours) </p>
         </div>
         <div class="tile is-child" style="display: block; text-align: center;">
-            <p> Ours </p>
-            <p>(Training Shared Noise) </p>
-            <p>(Sampling Non-shared Noise) </p>
+            <p>Training Shared Noise</p>
+            <p>Sampling Non-shared Noise</p>
         </div>
         <div class="tile is-child" style="display: block; text-align: center;">
-            <p> Ours </p>
-            <p>(Training Non-shared Noise) </p>
-            <p>(Sampling Non-shared Noise) </p>
+            <p>Training Non-shared Noise</p>
+            <p>Sampling Non-shared Noise</p>
+        </div>
+        <div class="tile is-child" style="display: block; text-align: center;">
+            <p>Training Non-shared Noise</p>
+            <p>Sampling Shared Noise</p>
         </div>
       </div>
     </div>
@@ -801,6 +975,11 @@
         <div class="tile is-child">
           <div class="box" style="display: block; text-align: center;">
             <img src="static/videos/MHAD_train_1.gif" width="250"/>
+          </div>
+        </div>
+        <div class="tile is-child">
+          <div class="box" style="display: block; text-align: center;">
+            <img src="static/videos/MHAD_new_1.gif" width="250"/>
           </div>
         </div>
       </div>
@@ -825,6 +1004,11 @@
             <img src="static/videos/MHAD_train_2.gif" width="250"/>
           </div>
         </div>
+        <div class="tile is-child">
+          <div class="box" style="display: block; text-align: center;">
+            <img src="static/videos/MHAD_new_2.gif" width="250"/>
+          </div>
+        </div>
       </div>
     </div>
     <div class="box is-max-desktop" style="display: block; text-align: center;">
@@ -847,6 +1031,11 @@
             <img src="static/videos/MUG_train_2.gif" width="250"/>
           </div>
         </div>
+        <div class="tile is-child">
+          <div class="box" style="display: block; text-align: center;">
+            <img src="static/videos/MUG_new_2.gif" width="250"/>
+          </div>
+        </div>
       </div>
     </div>
     <div class="box is-max-desktop" style="display: block; text-align: center;">
@@ -867,6 +1056,11 @@
         <div class="tile is-child">
           <div class="box" style="display: block; text-align: center;">
             <img src="static/videos/MUG_train_3.gif" width="250"/>
+          </div>
+        </div>
+        <div class="tile is-child">
+          <div class="box" style="display: block; text-align: center;">
+            <img src="static/videos/MUG_new_3.gif" width="250"/>
           </div>
         </div>
       </div>
